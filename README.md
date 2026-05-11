@@ -29,7 +29,7 @@ distributed-llm-system/
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Abdallahbahaa10/distributed-LLM-System
    cd distributed-llm-system
    ```
 
