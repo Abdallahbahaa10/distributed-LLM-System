@@ -35,7 +35,7 @@ distributed-llm-system/
 
 2. **Deploy Load Balancer (NGINX)**
    ```bash
-   ssh -i "cse354-key.pem" ubuntu@98.89.22.60
+   ssh -i "cse354-key.pem" ubuntu@3.231.37.113
    sudo apt update
    sudo apt install nginx -y
    # Copy nginx configuration
@@ -45,7 +45,7 @@ distributed-llm-system/
 3. **Deploy Master Scheduler**
    ```bash
    scp -i "cse354-key.pem" scheduler_server_enhanced.py ubuntu@18.212.224.21:~/project/scheduler_server.py
-   ssh -i "cse354-key.pem" ubuntu@18.212.224.21
+   ssh -i "cse354-key.pem" ubuntu@<master_ip>
    cd ~/project
    python3 scheduler_server.py
    ```
@@ -58,8 +58,7 @@ distributed-llm-system/
    # Or manually for each worker
    scp -i "cse354-key.pem" worker_server_production.py ubuntu@<WORKER_IP>:~/project/worker_server.py
    ssh -i "cse354-key.pem" ubuntu@<WORKER_IP>
-   cd ~/project
-   python3 worker_server.py 8001 &
+   cd ~/project && python3 worker_server.py 8001 
    ```
 
 5. **Verify Deployment**
